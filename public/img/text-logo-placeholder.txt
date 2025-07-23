@@ -1,0 +1,9 @@
+Please add your text-logo.png file here for the navbar.
+
+The navbar expects:
+- File: text-logo.png
+- Recommended size: 120x32px (or similar aspect ratio)
+- Format: PNG with transparent background
+- Style: Clean, modern text logo for "AthLab"
+
+Once added, delete this placeholder file. 

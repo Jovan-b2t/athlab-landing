@@ -1,0 +1,176 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Font Face Declarations */
+@font-face {
+  font-family: 'Clash Display Variable';
+  src: url('/fonts/ClashDisplay-Variable.woff2') format('woff2');
+  font-weight: 200 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Space Grotesk Variable';
+  src: url('/fonts/SpaceGrotesk-Variable.woff2') format('woff2');
+  font-weight: 300 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  
+  body {
+    @apply bg-navy-950 text-white antialiased;
+    font-feature-settings: "rlig" 1, "calt" 1;
+  }
+}
+
+@layer components {
+  /* Glassmorphism Components */
+  .glass {
+    @apply backdrop-blur-md bg-white/10 border border-white/20;
+  }
+  
+
+
+  /* Natural Glow Effects with Exponential Falloff */
+  .cyber-glow {
+    box-shadow: 
+      0 0 4px hsl(155, 85%, 55%, 0.8),
+      0 0 8px hsl(155, 85%, 55%, 0.6),
+      0 0 16px hsl(155, 85%, 55%, 0.4),
+      0 0 32px hsl(155, 85%, 55%, 0.2),
+      0 0 64px hsl(155, 85%, 55%, 0.1);
+  }
+  
+  .cyber-glow-intense {
+    box-shadow: 
+      0 0 4px hsl(155, 85%, 55%, 1),
+      0 0 8px hsl(155, 85%, 55%, 0.8),
+      0 0 16px hsl(155, 85%, 55%, 0.6),
+      0 0 32px hsl(155, 85%, 55%, 0.4),
+      0 0 64px hsl(155, 85%, 55%, 0.2);
+  }
+  
+
+
+  /* Brighter Navy-Focused Gradients */
+  .gradient-animate {
+    background: linear-gradient(
+      270deg,
+      hsl(245, 65%, 15%),
+      hsl(245, 70%, 10%),
+      hsl(245, 60%, 12%),
+      hsl(245, 65%, 8%),
+      hsl(245, 60%, 10%)
+    );
+    background-size: 400% 400%;
+    animation: gradient-shift 12s ease infinite;
+  }
+  
+  .navy-gradient-deep {
+    background: linear-gradient(
+      135deg,
+      hsl(245, 70%, 18%),
+      hsl(245, 75%, 12%),
+      hsl(245, 65%, 8%),
+      hsl(245, 60%, 6%)
+    );
+  }
+
+  /* Natural Neon Text with Exponential Falloff */
+  .neon-text {
+    text-shadow: 
+      0 0 4px hsl(155, 85%, 55%, 0.9),
+      0 0 8px hsl(155, 85%, 55%, 0.7),
+      0 0 16px hsl(155, 85%, 55%, 0.5),
+      0 0 32px hsl(155, 85%, 55%, 0.3),
+      0 0 64px hsl(155, 85%, 55%, 0.1);
+  }
+  
+  .neon-text-subtle {
+    text-shadow: 
+      0 0 4px hsl(155, 85%, 55%, 0.6),
+      0 0 8px hsl(155, 85%, 55%, 0.4),
+      0 0 16px hsl(155, 85%, 55%, 0.2);
+  }
+  
+
+
+  /* Clean Navy Cards */
+  .interactive-card {
+    @apply bg-navy-800/60 border border-navy-600/40 rounded-2xl p-6 transition-all duration-300 cursor-pointer backdrop-blur-sm;
+  }
+  
+  .interactive-card:hover {
+    @apply bg-navy-700/80 border-navy-500/60;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    transform: scale(1.01) translateY(-1px);
+  }
+
+  /* Clean Button Hover Effect */
+  .cyber-glow-on-hover:hover {
+    box-shadow: 
+      0 0 4px hsl(155, 85%, 55%, 0.6),
+      0 0 8px hsl(155, 85%, 55%, 0.4),
+      0 0 16px hsl(155, 85%, 55%, 0.2);
+    transform: scale(1.03) translateY(-1px);
+  }
+  
+
+}
+
+@layer utilities {
+  /* Custom Animations */
+  .animate-float-delayed {
+    animation: float 3s ease-in-out infinite 1s;
+  }
+  
+  .animate-glow-pulse-delayed {
+    animation: glow-pulse 3s ease-in-out infinite 0.5s;
+  }
+
+  /* Responsive Typography */
+  .text-display {
+    @apply text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-clash font-bold leading-tight;
+  }
+  
+  .text-hero {
+    @apply text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-clash font-bold leading-tight;
+  }
+  
+  .text-section {
+    @apply text-2xl md:text-3xl lg:text-4xl font-clash font-bold;
+  }
+  
+  .text-body {
+    @apply text-base md:text-lg font-space font-light leading-relaxed;
+  }
+  
+  .text-body-bold {
+    @apply text-base md:text-lg font-space font-medium leading-relaxed;
+  }
+}
+
+/* Scrollbar Styling */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: hsl(245, 40%, 8%);
+}
+
+::-webkit-scrollbar-thumb {
+  background: hsl(155, 98%, 50%);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: hsl(155, 98%, 40%);
+} 
